@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (homeButton && homeMessage) {
     homeButton.addEventListener('click', () => {
-      homeMessage.textContent = 'Hello from the Home page JavaScript!';
+      homeMessage.textContent = 'Are you ready to know about your number';
     });
   }
 
