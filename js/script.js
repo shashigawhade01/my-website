@@ -15,4 +15,16 @@ document.addEventListener('DOMContentLoaded', () => {
       aboutMessage.textContent = 'You clicked the About page button.';
     });
   }
+
+  // Handle number input on about page
+  const urlParams = new URLSearchParams(window.location.search);
+  const num = urlParams.get('num');
+  if (num) {
+    const numberInfo = document.getElementById('numberInfo');
+    if (numberInfo) {
+      const n = parseInt(num);
+      const isEven = n % 2 === 0;
+      numberInfo.textContent = `The number you entered is ${n}. It is ${isEven ? 'even' : 'odd'}.`;
+    }
+  }
 });
