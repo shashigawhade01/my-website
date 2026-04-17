@@ -1,12 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
   const homeButton = document.getElementById('homeButton');
   const homeMessage = document.getElementById('homeMessage');
+  const numberInput = document.getElementById('numberInput');
   const aboutButton = document.getElementById('aboutButton');
   const aboutMessage = document.getElementById('aboutMessage');
 
-  if (homeButton && homeMessage) {
+  if (homeButton && homeMessage && numberInput) {
     homeButton.addEventListener('click', () => {
-      homeMessage.textContent = 'Are you ready to know about your number';
+      const value = numberInput.value.trim();
+      if (value) {
+        homeMessage.textContent = `Your number is ${value}.`;
+      } else {
+        homeMessage.textContent = 'Please enter a number first.';
+      }
     });
   }
 
